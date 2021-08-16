@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const execa = require("execa");
 const fs = require("fs");
+const windows = true;
 (async () => {
   try {
     await execa("git", ["checkout", "--orphan", "gh-pages"]);
@@ -13,7 +14,11 @@ const fs = require("fs");
     await execa("git", ["--work-tree", folderName, "commit", "-m", "gh-pages"]);
     console.log("Pushing to gh-pages...");
     await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
-    await execa("rm", ["-r", folderName]);
+    if (windows){
+        await execa("rd", ["/s", "/q", folderName]);
+    }else {
+        await execa("rm", ["-r", folderName]);
+    }
     await execa("git", ["checkout", "-f", "master"]);
     await execa("git", ["branch", "-D", "gh-pages"]);
     console.log("Successfully deployed, check your settings");
