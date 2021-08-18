@@ -4,6 +4,7 @@
       <WelcomePage />
     </section>
     <section>
+      <AboutMe />
     </section>
     <section>
     </section>
@@ -12,12 +13,14 @@
 
 <script>
 import WelcomePage from './sections/WelcomePage.vue';
+import AboutMe from './sections/AboutMe.vue';
 
 export default {
   name: 'HomePage',
 
   components: {
-    WelcomePage
+    WelcomePage,
+    AboutMe
   },
 
   data() {

@@ -1,0 +1,129 @@
+<template>
+    <div class="content">
+        <div class="top">
+            <span class="title">About Me</span>
+            <span class="subtitle">A sort of online resume, showcasing my education, skills, and work experience</span>
+        </div>
+        <div class="about-section">
+            <span class="header">Work Experience</span>
+            <DataTable :value="experience" class="bottom-border">
+                <Column field="position" header="Position" />
+                <Column field="company" header="Company" />
+                <Column field="date" header="Date" />
+            </DataTable>
+            <div @click="goToWork" class="learn-more">Learn More...</div>
+        </div>
+        <div class="about-section">
+            <span class="header">Skills and Technologies</span>
+            <DataTable :value="skills" class="bottom-border no-head">
+                <Column field="skill" />
+            </DataTable>
+            <div @click="goToSkills" class="learn-more">Learn More...</div>
+        </div>
+        <div class="about-section">
+            <span class="header">Education</span>
+            <span class="subheader">
+                Candidate for Bachelor of Applied Science, University of Waterloo 2018-2023
+            </span>
+            <span class="subheader indent">
+                Cumulative Average: 88.52%
+            </span>
+        </div>
+    </div>
+</template>
+
+<script>
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
+import workExperience from '../../jsondata/work-experience.json';
+import skillAndTech from '../../jsondata/skills.json';
+
+export default {
+    name: "AboutMe",
+    components: {
+        DataTable,
+        Column
+    },
+    data() {
+        return {
+            experience: [],
+            skills: []
+        }
+    },
+    created() {
+        this.experience = workExperience.data;
+        this.skills = skillAndTech.data.slice(0, 4);
+        this.skills.push({"skill": "And Much More!"});
+    }
+}
+</script>
+
+<style lang="scss">
+.content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    .top {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10vh;
+        margin-left: 10%;
+
+        .title {
+            font-family: Helvetica;
+            font-weight: bold;
+            font-size: 40px;
+            color: #272727;
+            text-align: left;
+        }
+
+        .subtitle {
+            max-width: 500px;
+            font-family: Helvetica;
+            font-weight: bold;
+            font-size: 20px;
+            color: #272727;
+            text-align: left;
+        }
+    }
+
+    .about-section {
+        display: flex;
+        flex-direction: column;
+        margin: 2% 10% 0px 10%;
+
+        .header {
+            max-width: 500px;
+            font-family: Helvetica;
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 10px;
+            color: #272727;
+            text-align: left;
+        }
+
+        .subheader {
+            font-family: Helvetica;
+            font-weight: bold;
+            font-size: 17px;
+            color: #272727;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .learn-more {
+            color: #3da5d9;
+            text-align: left;
+            margin-top: 3px;
+            font-family: Helvetica;
+            font-weight: bold;
+
+            &:hover {
+                color: #4281a4;
+                cursor: pointer;
+            }
+        }
+    }
+}
+</style>

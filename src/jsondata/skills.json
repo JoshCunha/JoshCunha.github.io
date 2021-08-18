@@ -1,0 +1,21 @@
+{
+    "data": [
+        {"skill": "Vue"},
+        {"skill": "JavaScript"},
+        {"skill": "Python"},
+        {"skill": "C++"},
+        {"skill": "Git"},
+        {"skill": "JIRA"},
+        {"skill": "Confluence"},
+        {"skill": "C"},
+        {"skill": "HTML"},
+        {"skill": "CSS"},
+        {"skill": "Groovy"},
+        {"skill": "LaTeX"},
+        {"skill": "Jenkins"},
+        {"skill": "OSx"},
+        {"skill": "Windows"},
+        {"skill": "jQuery"},
+        {"skill": "Visual Studio"}
+    ]
+}
