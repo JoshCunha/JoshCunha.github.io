@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <section>
+      <WelcomePage />
     </section>
     <section>
     </section>
@@ -10,8 +11,14 @@
 </template>
 
 <script>
+import WelcomePage from './sections/WelcomePage.vue';
+
 export default {
   name: 'HomePage',
+
+  components: {
+    WelcomePage
+  },
 
   data() {
     return {
@@ -130,6 +137,5 @@ export default {
 section {
   height: 100vh;
   width: 100%;
-  background-color: #faf3dd;
 }
 </style>
