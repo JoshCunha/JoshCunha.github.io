@@ -1,6 +1,6 @@
 <template>
     <div class="taskbar">
-        <div class="taskbar-item" @click="scrollTo(0)">
+        <div class="taskbar-item" @click="toHome">
             <svg
                 class="home icon"
                 fill="none"
@@ -16,11 +16,26 @@
                 />
             </svg>
         </div>
-        <div class="taskbar-item" @click="scrollTo(1)">
+        <div v-if="home" class="taskbar-item" @click="scrollTo(1)">
             <span class="taskbar-element">ABOUT</span>
         </div>
-        <div class="taskbar-item" @click="scrollTo(2)">
+        <div v-if="home" class="taskbar-item" @click="scrollTo(2)">
             <span class="taskbar-element">MUSIC</span>
+        </div>
+
+        <div v-if="!home">
+            <div 
+                v-for="item, index in content"
+                :key="index"
+                class="list-container"
+            >
+                <div class="taskbar-item">
+                    <span class="taskbar-element">></span>
+                </div>
+                <div class="taskbar-item">
+                    <span class="taskbar-element">{{ item }}</span>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -28,8 +43,24 @@
 <script>
 export default {
     name: "Taskbar",
-    props: {},
+    props: {
+        home: {
+            type: Boolean,
+            required: true
+        },
+        content: {
+            type: Array,
+            required: false
+        }
+    },
     methods: {
+        toHome() {
+            if (this.home) {
+                this.scrollTo(0);
+            } else {
+                this.$router.push({path: '/'});
+            }
+        },
         scrollTo(id) {
             this.$emit('updatePage', id);
         }
@@ -47,6 +78,7 @@ export default {
     background: #c3acce;
     height: 45px;
     box-shadow: 0px 1px 3px #272727;
+    z-index: 900;
 
     .taskbar-item {
         display: flex;
@@ -75,6 +107,17 @@ export default {
         color: #331e36;
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    .list-container {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+
+        .taskbar-item:hover  {
+            background: #c3acce;
+            cursor: default;
+        }
     }
 }
 </style>

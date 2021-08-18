@@ -1,9 +1,58 @@
 {
     "data": [
-        {"position": "Web Software Developer Intern", "company": "Genesys", "date": "Jan 2021 - Apr 2021"},
-        {"position": "Front End Developer Intern", "company": "Doorr", "date": "May 2020 - Aug 2020"},
-        {"position": "Software Developer in Test Intern", "company": "PlayStation", "date": "Sep 2019 - Dec 2019"},
-        {"position": "QA Developer Intern", "company": "Imagine Communications", "date": "Jan 2019 - Apr 2019"},
-        {"position": "Server", "company": "Royal Ambassador Event Centre", "date": "Jul 2018 - Sep 2018"}
+        {
+            "position": "Web Software Developer Intern",
+            "company": "Genesys",
+            "date": "Jan 2021 - Apr 2021",
+            "points": [
+                "placholder 1",
+                "placeholder 2"
+            ]
+        },
+        {
+            "position": "Front End Developer Intern",
+            "company": "Doorr",
+            "date": "May 2020 - Aug 2020",
+            "points": [
+                "Updated the main dashboard page of the site to use Vue instead of jQuery which allowed better integration with the rest of the platform",
+                "Fixed both functional and visual bugs across the platform, improving user experience",
+                "Developed several enhancements to the site as per client request to improve clarity and overall experience within the site",
+                "Created unit tests for new and existing code, greatly improving test coverage across the platform"
+            ]
+        },
+        {
+            "position": "Software Developer in Test Intern",
+            "company": "PlayStation",
+            "date": "Sep 2019 - Dec 2019",
+            "points": [
+                "Analyzed developer tickets and composed automatic test cases in Python to test new changes",
+                "Oversaw automated Jenkins jobs and helped fix failing test cases to improve results to around 90%+ success rate",
+                "Migrated Jenkins jobs required for deployments to the new server by rewriting them with updated functionality in Groovy",
+                "Developed a script to automatically run a number of basic smoke tests off of a build whenever requested in a GitHub PR",
+                "Created a Jenkins job to monitor the status of testing machines, reporting errors to QA to ensure machines were used effectively",
+                "Led a meeting to transfer basic knowledge and tips I had learned about Jenkins to newer employees with less experience"
+            ]
+        },
+        {
+            "position": "QA Developer Intern",
+            "company": "Imagine Communications",
+            "date": "Jan 2019 - Apr 2019",
+            "points": [
+                "Planned, designed, and composed scripts with Python to automate product tests, saving over 5 hours per week",
+                "Implemented a Python script for updating all the team’s machines to the newest version to ensure automated tests were never running on outdated builds",
+                "Led a meeting to demonstrate the capabilities and features of an upgrade script to finalize it before integration",
+                "Optimized testing by deploying new machines that were used exclusively for our team’s testing",
+                "Experienced working with source control and project management software in an Agile environment"
+            ]
+        },
+        {
+            "position": "Server",
+            "company": "Royal Ambassador Event Centre",
+            "date": "Jul 2018 - Sep 2018",
+            "points": [
+                "Collaborated with co-workers to serve guests and clean the hall in a timely fashion",
+                "Consulted with customers and tended to any needs or concerns they may have had"
+            ]
+        }
     ]
 }

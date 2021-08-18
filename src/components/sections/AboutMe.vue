@@ -50,6 +50,11 @@ export default {
             skills: []
         }
     },
+    methods: {
+        goToWork() {
+            this.$router.push({path: '/workexperience'});
+        }
+    },
     created() {
         this.experience = workExperience.data;
         this.skills = skillAndTech.data.slice(0, 4);
@@ -91,7 +96,7 @@ export default {
     .about-section {
         display: flex;
         flex-direction: column;
-        margin: 2% 10% 0px 10%;
+        margin: 3% 10% 0px 10%;
 
         .header {
             max-width: 500px;

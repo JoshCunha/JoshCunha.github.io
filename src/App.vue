@@ -1,24 +1,10 @@
 <template>
-  <Taskbar @updatePage="updatePage" />
-  <HomePage ref="HomePage" />
+  <router-view />
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue';
-import Taskbar from './components/Taskbar.vue';
-
 export default {
-  name: 'App',
-  components: {
-    HomePage,
-    Taskbar
-  },
-
-  methods: {
-    updatePage(id) {
-      this.$refs.HomePage.scrollToSection(id);
-    }
-  }
+  name: 'App'
 }
 </script>
 
