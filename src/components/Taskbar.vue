@@ -1,6 +1,6 @@
 <template>
     <div class="taskbar">
-        <div class="taskbar-item">
+        <div class="taskbar-item" @click="scrollTo(0)">
             <svg
                 class="home icon"
                 fill="none"
@@ -16,10 +16,10 @@
                 />
             </svg>
         </div>
-        <div class="taskbar-item">
+        <div class="taskbar-item" @click="scrollTo(1)">
             <span class="taskbar-element">ABOUT</span>
         </div>
-        <div class="taskbar-item">
+        <div class="taskbar-item" @click="scrollTo(2)">
             <span class="taskbar-element">MUSIC</span>
         </div>
         <div @click="toGithub" class="right-content">
@@ -42,8 +42,14 @@ export default {
     name: "Taskbar",
     props: {},
     methods: {
-        toGithub() {
-            window.location.href = "https://github.com/JoshCunha";
+        toGithub(event) {
+            event.ctrlKey ? 
+                window.open("https://github.com/JoshCunha") :
+                window.location.href = "https://github.com/JoshCunha";
+        },
+
+        scrollTo(id) {
+            this.$emit('updatePage', id);
         }
     }
 }
@@ -77,7 +83,7 @@ export default {
             color: #331e36;
             font-weight: bold;
             font-family: Helvetica;
-            font-size: 20px;
+            font-size: 22px;
         }
     }
 

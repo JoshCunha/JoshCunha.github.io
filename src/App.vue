@@ -1,6 +1,6 @@
 <template>
-  <Taskbar />
-  <HomePage />
+  <Taskbar @updatePage="updatePage" />
+  <HomePage ref="HomePage" />
 </template>
 
 <script>
@@ -12,6 +12,12 @@ export default {
   components: {
     HomePage,
     Taskbar
+  },
+
+  methods: {
+    updatePage(id) {
+      this.$refs.HomePage.scrollToSection(id);
+    }
   }
 }
 </script>
