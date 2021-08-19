@@ -52,7 +52,11 @@ export default {
     },
     methods: {
         goToWork() {
-            this.$router.push({path: '/workexperience'});
+            this.$router.push({ path: '/workexperience' });
+        },
+
+        goToSkills() {
+            this.$router.push({ path: '/skills' })
         }
     },
     created() {
