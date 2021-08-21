@@ -2,7 +2,7 @@
     <Taskbar :home="false" :content="['Work Experience']"/>
     <div class="work-experience">
         <span class="header">Work Experience</span>
-        <DataTable :value="experience" v-model:expandedRows="expandedRows" class="bottom-border">
+        <DataTable :value="experience" v-model:expandedRows="expandedRows" class="include-border">
             <Column field="position" header="Position" />
             <Column field="company" header="Company" />
             <Column field="date" header="Date" />
@@ -89,6 +89,7 @@ export default {
         display: flex;
         flex-direction: column;
         margin-left: 20px;
+        margin-right: 15px;
         
         .general-data {
             display: flex;
@@ -101,7 +102,6 @@ export default {
             .date {
                 font-weight: bold;
                 margin-left: auto;
-                margin-right: 15px;
             }
         }
     }

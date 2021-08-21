@@ -2,7 +2,7 @@
     <Taskbar :home="false" :content="['Skills and Technologies']" />
     <div class="skills-technologies">
         <span class="header">Skills and Technologies</span>
-        <DataTable :value="skills" v-model:expandedRows="expandedRows" class="bottom-border no-head">
+        <DataTable :value="skills" v-model:expandedRows="expandedRows" class="include-border no-head">
             <Column field="skill" />
             <Column :expander="true" headerStyle="width: 38px" />
             <template #expansion="slotProps">
@@ -90,6 +90,7 @@ export default {
         display: flex;
         flex-direction: column;
         margin-left: 20px;
+        margin-right: 15px;
 
         .title {
             font-weight: bold;

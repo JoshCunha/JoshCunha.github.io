@@ -7,6 +7,7 @@
       <AboutMe />
     </section>
     <section>
+      <Music />
     </section>
   </div>
 </template>
@@ -14,13 +15,15 @@
 <script>
 import WelcomePage from './sections/WelcomePage.vue';
 import AboutMe from './sections/AboutMe.vue';
+import Music from './sections/Music.vue';
 
 export default {
   name: 'HomePage',
 
   components: {
     WelcomePage,
-    AboutMe
+    AboutMe,
+    Music
   },
 
   data() {

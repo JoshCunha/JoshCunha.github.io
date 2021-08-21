@@ -12,6 +12,7 @@ thead {
     th {
         background: #c3acce;
         border: 1px solid #272727;
+        border-top: none;
     }
 }
 
@@ -21,10 +22,10 @@ tbody {
         text-align: left;
         color: #272727;
         font-family: Helvetica;
-        border: 1px solid #272727;
-        padding: 5px 0px 5px 10px;
+        border: 1px solid #272727 !important;
+        padding: 5px 10px 5px 10px;
         border-top: none !important;
-        border-bottom: none;
+        border-bottom: none !important;
     }
 
     tr:nth-child(2n) {
@@ -32,8 +33,9 @@ tbody {
     }
 }
 
-.bottom-border {
+.include-border {
     border-bottom: 1px solid #272727;
+    border-top: 1px solid #272727;
 }
 
 .no-head {

@@ -6,7 +6,7 @@
         </div>
         <div class="about-section">
             <span class="header">Work Experience</span>
-            <DataTable :value="experience" class="bottom-border">
+            <DataTable :value="experience" class="include-border">
                 <Column field="position" header="Position" />
                 <Column field="company" header="Company" />
                 <Column field="date" header="Date" />
@@ -15,7 +15,7 @@
         </div>
         <div class="about-section">
             <span class="header">Skills and Technologies</span>
-            <DataTable :value="skills" class="bottom-border no-head">
+            <DataTable :value="skills" class="include-border no-head">
                 <Column field="skill" />
             </DataTable>
             <div @click="goToSkills" class="learn-more">Learn More...</div>
