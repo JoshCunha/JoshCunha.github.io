@@ -83,6 +83,7 @@ export default {
         font-size: 15px;
         font-family: Helvetica;
         margin-top: 5px;
+        color: #272727;
     }
 
     .expanded {
