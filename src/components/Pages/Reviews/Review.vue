@@ -3,7 +3,7 @@
         <img class="album-art" :src="image" width="250" height="250" />
         <span class="album-title">{{ title }} - {{ artist }}</span>
         <div class="paragraph-container">
-            <p class="paragraph">{{ reviewBlock }}</p>
+            <p class="paragraph" v-html="reviewBlock" />
         </div>
         <div @click="openReview" class="see-full">See Full Review...</div>
         <div class="seperator" />
@@ -83,9 +83,7 @@
                     </div>
                 </div>
                 <div class="review-content">
-                    <p class="review-paragraph">
-                        {{ reviewBlock }}
-                    </p>
+                    <p class="review-paragraph" v-html="reviewBlock" />
                 </div>
             </div>
         </template>
@@ -154,8 +152,7 @@ export default {
     height: 475px;
     width: 275px;
     border-radius: 20px;
-    margin: 5px 60px 10px 5px;
-    margin-right: 60px;
+    margin: 20px auto 10px 10px;
     box-shadow: 0px 0px 3px #ababab;
 
     &:hover {
@@ -172,6 +169,7 @@ export default {
     }
 
     .album-title {
+        height: 36px;
         font-family: Helvetica;
         font-weight: bold;
         color: #272727;
@@ -188,6 +186,7 @@ export default {
         .paragraph {
             overflow-wrap: break-word;
             overflow: hidden;
+            text-align: left;
             text-overflow: ellipsis;
             font-family: Helvetica;
             margin: 5px 5px;
@@ -206,6 +205,7 @@ export default {
         color: #ababab;
         text-align: left;
         margin: 0px 10px;
+        width: fit-content;
 
         &:hover {
             color: #808080;
@@ -276,12 +276,14 @@ export default {
 
             .album-art-modal {
                 border-radius: 5px;
+                box-shadow: 0px 0px 5px #808080;
             }
         }
 
         .modal-data {
             display: flex;
             flex-direction: column;
+            width: 100%;
             margin: 20px 20px 5px;
 
             .album-title {
@@ -322,6 +324,8 @@ export default {
             margin: 5px;
             max-height: 100%;
             overflow-y: auto;
+            text-align: left;
+            color: #272727;
         }
     }
 }

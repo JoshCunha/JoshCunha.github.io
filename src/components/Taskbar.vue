@@ -78,7 +78,7 @@ export default {
     background: #c3acce;
     height: 45px;
     box-shadow: 0px 1px 3px #272727;
-    z-index: 900;
+    z-index: 1;
 
     .taskbar-item {
         display: flex;

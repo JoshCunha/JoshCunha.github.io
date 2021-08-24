@@ -8,24 +8,50 @@
         <div class="recent-reviews">
             <span class="title">Recent Reviews</span>
             <div class="review-block">
-                <Review />
-                <Review />
-                <Review />
-                <Review />
+                <Review 
+                    v-for="review,index in sortedReviews"
+                    :key="index"
+                    :image="review.image"
+                    :title="review.album"
+                    :artist="review.artist"
+                    :reviewBlock="review.review"
+                    :spotifyLink="review.spotifyLink"
+                    :appleLink="review.appleLink"
+                    :rating="review.rating"
+                />
             </div>
-            <div class="see-all">See All...</div>
+            <div @click="toAllReviews" class="see-all">See All...</div>
         </div>
     </div>
 </template>
 
 <script>
+import moment from 'moment';
 import Review from '../Pages/Reviews/Review.vue';
+import musicReviews from '../../jsondata/reviews.json';
 
 export default {
     name: "Music",
 
     components: {
         Review
+    },
+
+    data() {
+        return {
+            sortedReviews: []
+        }
+    },
+
+    methods: {
+        toAllReviews() {
+            this.$router.push({ path: '/reviews' });
+        }
+    },
+
+    created() {
+        let allReviews = musicReviews.data;
+        this.sortedReviews = allReviews.sort((a,b) => moment(b.date).diff(a.date)).slice(0, 5);
     }
 }
 </script>
@@ -43,14 +69,13 @@ export default {
         font-size: 30px;
         text-align: left;
         color: #272727;
-        margin-bottom: 15px;
     }
 
     .review-block {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 485px;
+        height: 505px;
         overflow: hidden;
     }
 

@@ -4,22 +4,31 @@ import App from './App.vue';
 import Home from './Home.vue';
 import WorkExperience from './components/Pages/WorkExperience.vue';
 import Skills from './components/Pages/Skills.vue';
+import AllReviews from './components/Pages/Reviews/AllReviews.vue';
 
 // styles
 import 'normalize.css';
 import './styles/TableStyle.scss';
-import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 
 const routes = [
     { path: '/', component: Home },
     { path: '/workexperience', component: WorkExperience },
-    { path: '/skills', component: Skills }
+    { path: '/skills', component: Skills },
+    { path: '/reviews', component: AllReviews }
 ];
 
 const router = createRouter({
     history: createWebHashHistory(),
-    routes
+    routes,
+    // eslint-disable-next-line
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }
 });
 
 const app = createApp(App);

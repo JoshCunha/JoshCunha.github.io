@@ -112,16 +112,16 @@ export default {
 
   mounted() {
     this.calculateSectionOffsets();
-    window.addEventListener('mousewheel', this.handleMouseWheel, {
-      passive: false
-    });
-    window.addEventListener('DOMMouseScroll', this.handleMouseWheel);
-    window.addEventListener('touchstart', this.touchStart, {
-      passive: false
-    });
-    window.addEventListener('touchmove', this.touchMove, {
-      passive: false
-    });
+    // window.addEventListener('mousewheel', this.handleMouseWheel, {
+    //   passive: false
+    // });
+    // window.addEventListener('DOMMouseScroll', this.handleMouseWheel);
+    // window.addEventListener('touchstart', this.touchStart, {
+    //   passive: false
+    // });
+    // window.addEventListener('touchmove', this.touchMove, {
+    //   passive: false
+    // });
   },
 
   unmounted() {
