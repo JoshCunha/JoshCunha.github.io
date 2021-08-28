@@ -1,6 +1,6 @@
 <template>
     <div class="list-container">
-        <DataTable :value="reviewsIn" class="include-border clickable-rows" @row-click="openReview">
+        <DataTable :value="reviewsIn" class="include-border clickable-rows" @row-click="openReview" breakpoint="2px">
             <Column field="album" header="Album" :sortable="true">
                 <template #body="slotProps">
                     <div class="album-col">
@@ -108,6 +108,16 @@ export default {
             justify-content: center;
             align-items: center;
             margin-left: 20px;
+        }
+
+        @media screen and (max-width: 900px) {
+            .list-img {
+                display: none;
+            }
+
+            .album-title {
+                text-align: right;
+            }
         }
     }
 

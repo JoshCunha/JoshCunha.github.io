@@ -214,4 +214,43 @@ export default {
         }
     }
 }
+
+@media screen and (max-width: 850px) {
+    .modal-content {
+        min-width: 300px;
+        height: fit-content !important;
+    
+        .review-modal-body {
+            .review-modal-header {
+                flex-wrap: wrap;
+                .art-container {
+                    margin-left: auto;
+                    margin-right: auto;
+                    .album-art-modal {
+                        justify-content: center;
+                        align-items: center;
+                        width: 240px;
+                        height: 240px;
+                    }
+                }
+
+                .modal-data {
+                    margin-top: 5px;
+
+                    .album-title {
+                        font-size: 25px;
+                    }
+                    .album-artist {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .review-content {
+                height: 150px !important;
+                margin: 5px;
+            }
+        }
+    }
+}
 </style>

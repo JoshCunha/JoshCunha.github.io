@@ -6,16 +6,16 @@
         </div>
         <div class="about-section">
             <span class="header">Work Experience</span>
-            <DataTable :value="experience" class="include-border">
+            <DataTable :value="experience" class="include-border" breakpoint="2px">
                 <Column field="position" header="Position" />
                 <Column field="company" header="Company" />
                 <Column field="date" header="Date" />
             </DataTable>
             <div @click="goToWork" class="learn-more">Learn More...</div>
         </div>
-        <div class="about-section">
+        <div class="about-section skills">
             <span class="header">Skills and Technologies</span>
-            <DataTable :value="skills" class="include-border no-head">
+            <DataTable :value="skills" class="include-border no-head" breakpoint="3px">
                 <Column field="skill" />
             </DataTable>
             <div @click="goToSkills" class="learn-more">Learn More...</div>
@@ -131,6 +131,14 @@ export default {
             &:hover {
                 color: #4281a4;
                 cursor: pointer;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            &.skills {
+                .p-datatable .p-datatable-tbody > tr > td {
+                    justify-content: left;
+                }
             }
         }
     }

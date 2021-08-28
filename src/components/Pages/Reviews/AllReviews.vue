@@ -3,16 +3,18 @@
     <div class="music-reviews">
         <span class="title">Music Reviews</span>
         <div class="reviews-header">
-            <Search @searchUpdate="updateSearch" />
-            <span v-if="!list" class="sort-by">Sort By: </span>
-            <Dropdown
-                v-if="!list"
-                @updateDropdown="newSort"
-                class="sort-dropdown"
-                defaultSelect="Newest"
-                :options="sortOptions"
-                :placeholder="'Highest Rated'"
-            />
+            <Search class="searcher" @searchUpdate="updateSearch" />
+            <div class="sorters">
+                <span v-if="!list" class="sort-by">Sort By: </span>
+                <Dropdown
+                    v-if="!list"
+                    @updateDropdown="newSort"
+                    class="sort-dropdown"
+                    defaultSelect="Newest"
+                    :options="sortOptions"
+                    :placeholder="'Highest Rated'"
+                />
+            </div>
             <i 
                 @click="toggleDisplay"
                 class="pi disp-switch"
@@ -137,12 +139,18 @@ export default {
         flex-wrap: wrap;
         margin-top: 15px;
 
-        .sort-by {
-            margin: 8px 10px 0px 5%;
-            font-style: Helvetica;
-            font-weight: bold;
-            color: #272727;
-            font-size: 20px;
+        .sorters {
+            display: flex;
+            flex-direction: row;
+
+            .sort-by {
+                min-width: 100px;
+                margin: 8px 10px 0px 5%;
+                font-style: Helvetica;
+                font-weight: bold;
+                color: #272727;
+                font-size: 20px;
+            }
         }
 
         .disp-switch {
@@ -162,6 +170,32 @@ export default {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .music-reviews {
+        margin: 50px 7% 5% 7%;
+    }
+}
+
+@media screen and (max-width: 649px) {
+    .music-reviews {
+        .reviews-header {
+            justify-content: center;
+            align-items: center;
+            .sorters {
+                flex-wrap: wrap;
+                margin-top: 5px;
+                width: 330px;
+                justify-content: center;
+                align-items: center;
+
+                .sort-by {
+                    margin-bottom: 5px;
+                }
+            }
+        }
     }
 }
 </style>

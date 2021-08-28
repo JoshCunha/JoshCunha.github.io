@@ -114,7 +114,7 @@ export default {
     height: 475px;
     width: 275px;
     border-radius: 20px;
-    margin: 20px auto 10px 10px;
+    margin: 20px auto 10px auto;
     box-shadow: 0px 0px 3px #ababab;
 
     &:hover {

@@ -2,7 +2,7 @@
     <Taskbar :home="false" :content="['Skills and Technologies']" />
     <div class="skills-technologies">
         <span class="header">Skills and Technologies</span>
-        <DataTable :value="skills" v-model:expandedRows="expandedRows" class="include-border no-head">
+        <DataTable :value="skills" v-model:expandedRows="expandedRows" class="include-border no-head" responsiveLayout="scroll">
             <Column field="skill" />
             <Column :expander="true" headerStyle="width: 36px" />
             <template #expansion="slotProps">
@@ -60,6 +60,7 @@ export default {
 .skills-technologies {
     display: flex;
     flex-direction: column;
+    width: auto;
     margin: 5% 7% 10% 7%;
 
     .header {
@@ -87,6 +88,14 @@ export default {
         }
     }
 
+    @media screen and (max-width: 900px) {
+        tr {
+            td:nth-child(2n) {
+                width: auto;
+            }
+        }
+    }
+
     .expanded {
         display: flex;
         flex-direction: column;
@@ -96,6 +105,12 @@ export default {
         .title {
             font-weight: bold;
         }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .skills-technologies {
+        margin: 50px 7% 5% 7%;
     }
 }
 </style>

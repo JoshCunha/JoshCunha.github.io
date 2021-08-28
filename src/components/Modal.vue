@@ -51,6 +51,9 @@ export default {
 
 <style lang="scss">
 .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
@@ -75,7 +78,6 @@ export default {
         position: relative;
         width: 60%;
         height: 575px;
-        top: 20%;
         margin: 0px auto;
         display: flex;
         flex-direction: column;
