@@ -4,17 +4,23 @@
         <span class="title">Music Reviews</span>
         <div class="reviews-header">
             <Search @searchUpdate="updateSearch" />
-            <span class="sort-by">Sort By: </span>
+            <span v-if="!list" class="sort-by">Sort By: </span>
             <Dropdown
+                v-if="!list"
                 @updateDropdown="newSort"
                 class="sort-dropdown"
                 defaultSelect="Newest"
                 :options="sortOptions"
                 :placeholder="'Highest Rated'"
             />
+            <i 
+                @click="toggleDisplay"
+                class="pi disp-switch"
+                :class="list ? 'pi-th-large' : 'pi-list'" 
+            />
         </div>
-        <div class="reviews-container">
-            <Review 
+        <div class="reviews-container"  v-if="!list">
+            <Review
                 v-for="review,index in sortedReviews"
                 :key="index"
                 :image="review.image"
@@ -26,6 +32,7 @@
                 :rating="review.rating"
             />
         </div>
+        <ReviewList v-if="list" :reviewsIn="sortedReviews" />
     </div>
 </template>
 
@@ -35,6 +42,7 @@ import Taskbar from '../../Taskbar.vue';
 import Review from './Review.vue';
 import Dropdown from '../../Dropdown.vue';
 import Search from '../../Search.vue';
+import ReviewList from './ReviewList.vue';
 import reviewJson from '../../../jsondata/reviews.json';
 
 export default {
@@ -43,7 +51,8 @@ export default {
         Taskbar,
         Review,
         Dropdown,
-        Search
+        Search,
+        ReviewList
     },
     data() {
         return {
@@ -57,7 +66,8 @@ export default {
                 { name: "Highest Rated", code: "high" },
                 { name: "Lowest Rated", code: "low" },
             ],
-            currentSort: "new"
+            currentSort: "new",
+            list: false
         }
     },
     methods: {
@@ -95,6 +105,9 @@ export default {
                     post.artist.toLowerCase().includes(text.toLowerCase());
             })
             this.sortList(this.currentSort);
+        },
+        toggleDisplay() {
+            this.list = !this.list;
         }
     },
     created() {
@@ -130,6 +143,18 @@ export default {
             font-weight: bold;
             color: #272727;
             font-size: 20px;
+        }
+
+        .disp-switch {
+            margin: 10px 10px 0px auto;
+            font-size: 25px;
+            font-weight: bold;
+            color: #808080;
+
+            &:hover {
+                cursor: pointer;
+                color: #272727;
+            }
         }
     }
 

@@ -59,78 +59,11 @@ export default {
       setTimeout(() => {
         this.inMove = false;
       }, 400);
-    },
-
-    handleMouseWheel(event) {
-      if (event.wheelDelta < 30 && !this.inMove) {
-        this.moveUp();
-      } else if (event.wheelDelta > 30 && !this.inMove) {
-        this.moveDown();
-      }
-
-      event.preventDefault();
-      return false;
-    },
-
-    touchStart(event) {
-      event.preventDefault();
-
-      this.touchStartY = event.touches[0].clientY;
-    },
-
-    touchMove(event) {
-      if (this.inMove) return false;
-      event.preventDefault();
-
-      const currentY = event.touches[0].clientY;
-
-      if (this.touchStartY < currentY) {
-        this.moveDown();
-      } else {
-        this.moveUp();
-      }
-
-      this.touchStartY = 0;
-      return false;
-    },
-
-    moveDown() {
-      this.activeSection--;
-      if (this.activeSection < 0) this.activeSection = 0;
-
-      this.scrollToSection(this.activeSection);
-    },
-
-    moveUp() {
-      this.activeSection++;
-
-      if (this.activeSection > this.offsets.length - 1) this.activeSection = this.offsets.length - 1;
-
-      this.scrollToSection(this.activeSection);
     }
   },
 
   mounted() {
     this.calculateSectionOffsets();
-    // window.addEventListener('mousewheel', this.handleMouseWheel, {
-    //   passive: false
-    // });
-    // window.addEventListener('DOMMouseScroll', this.handleMouseWheel);
-    // window.addEventListener('touchstart', this.touchStart, {
-    //   passive: false
-    // });
-    // window.addEventListener('touchmove', this.touchMove, {
-    //   passive: false
-    // });
-  },
-
-  unmounted() {
-    window.removeEventListener('mousewheel', this.handleMouseWheel, {
-      passive: false
-    });
-    window.removeEventListener('DOMMouseScroll', this.handleMouseWheel);
-    window.removeEventListener('touchstart', this.touchStart);
-    window.removeEventListener('touchmove', this.touchMove);
   }
 }
 </script>
@@ -141,7 +74,7 @@ export default {
   scroll-behavior: smooth;
 }
 section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 </style>

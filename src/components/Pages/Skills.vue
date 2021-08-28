@@ -4,7 +4,7 @@
         <span class="header">Skills and Technologies</span>
         <DataTable :value="skills" v-model:expandedRows="expandedRows" class="include-border no-head">
             <Column field="skill" />
-            <Column :expander="true" headerStyle="width: 38px" />
+            <Column :expander="true" headerStyle="width: 36px" />
             <template #expansion="slotProps">
                 <div class="expanded">
                     <span class="title">{{slotProps.data.skill}}</span>
@@ -83,7 +83,7 @@ export default {
 
     tr {
         td:nth-child(2n) {
-            width: 38px;
+            width: 28px;
         }
     }
 

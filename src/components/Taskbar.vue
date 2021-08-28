@@ -27,7 +27,7 @@
             <div 
                 v-for="item, index in content"
                 :key="index"
-                class="list-container"
+                class="tskbr-list-container"
             >
                 <div class="taskbar-item">
                     <span class="taskbar-element">></span>
@@ -109,7 +109,7 @@ export default {
         margin-right: 10px;
     }
 
-    .list-container {
+    .tskbr-list-container {
         display: flex;
         flex-direction: row;
         height: 100%;

@@ -29,7 +29,7 @@ tbody {
     }
 
     tr:nth-child(2n) {
-        background: #dddddd;
+        background: #eeeeee;
     }
 }
 
@@ -49,4 +49,35 @@ tbody {
 .p-datatable-row-expansion {
     border-top: 1px solid #272727;
     border-bottom: 1px solid #272727;
+}
+
+.clickable-rows tbody tr:hover{
+    cursor: pointer;
+    background: #dddddd;
+}
+
+.p-sortable-column-icon {
+    color: #272727;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 960px) {
+    .p-datatable[pv_id_1] .p-datatable-wrapper .p-datatable-tbody > tr > td {
+        width: auto !important;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .p-datatable[pv_id_2] .p-datatable-wrapper .p-datatable-tbody > tr > td {
+        width: auto !important;
+    }
+}
+
+.p-row-toggler {
+    background: none;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
 }

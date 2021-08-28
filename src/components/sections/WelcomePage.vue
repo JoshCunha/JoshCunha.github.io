@@ -89,7 +89,7 @@ export default {
 
 <style lang="scss">
 .content {
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 
@@ -121,6 +121,7 @@ export default {
     .footer-content {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         margin: auto 15% 15vh 15%;
 
         .position {
@@ -166,6 +167,39 @@ export default {
                         color: #272727;
                 }
                 }
+            }
+        }
+    }
+
+    @media screen and (max-width: 605px) {
+        .intro-box {
+            margin-left: 10vw;
+            margin-right: 10vw;
+
+            .title {
+                text-align: center;
+                margin-top: 10vh;
+            }
+
+            .subtitle {
+                text-align: center;
+                font-size: 30px;
+            }
+        }
+
+        .footer-content {
+            .position {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            .socials {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
             }
         }
     }

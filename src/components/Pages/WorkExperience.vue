@@ -6,7 +6,7 @@
             <Column field="position" header="Position" />
             <Column field="company" header="Company" />
             <Column field="date" header="Date" />
-            <Column :expander="true" headerStyle="width: 38px" />
+            <Column :expander="true" headerStyle="width: 46px" />
             <template #expansion="slotProps">
                 <div class="expanded">
                     <div class="general-data">
