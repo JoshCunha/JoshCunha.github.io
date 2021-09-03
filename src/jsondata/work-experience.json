@@ -5,8 +5,12 @@
             "company": "Genesys",
             "date": "Jan 2021 - Apr 2021",
             "points": [
-                "placholder 1",
-                "placeholder 2"
+                "Investigated and implemented fixes for bugs reported during tests",
+                "Tested the i18n translations and implemented quality of life fixes for other languages, ensuring all users have the best possible experience",
+                "Led the implementation of a new feature that was highly requested by current users",
+                "Adapted UX designs from picture to reality and quickly adjusted to any updated or new specifications from UX during the implementation process",
+                "Assisted in determining new or updated API calls needed to implement upcoming features",
+                "Led meeting segments multiple times throughout the term to demonstrate new functionality or features that were in progress or recently finished for the purpose of updating documentation and getting feedback"
             ]
         },
         {

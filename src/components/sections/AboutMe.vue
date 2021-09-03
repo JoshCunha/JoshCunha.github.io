@@ -26,7 +26,7 @@
                 Candidate for Bachelor of Applied Science, University of Waterloo 2018-2023
             </span>
             <span class="subheader indent">
-                Cumulative Average: 88.52%
+                Cumulative Average: 88.27%
             </span>
         </div>
     </div>
