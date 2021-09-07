@@ -3,7 +3,6 @@
         <div class="top">
             <span class="title">Music</span>
             <span class="subtitle">A compilation of reviews done by me for the albums I've listened to</span>
-            <span class="subtitle">Just a little bit of fun and, of course, everything is just my opinion and personal preference</span>
         </div>
         <div class="recent-reviews">
             <span class="title">Recent Reviews</span>
@@ -61,7 +60,8 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 5vh 10%;
+    margin: auto 10%;
+    padding: 15px 0px;
 
     .title {
         font-family: Helvetica;

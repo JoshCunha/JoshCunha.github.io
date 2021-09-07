@@ -87,7 +87,7 @@ export default {
         height: 100%;
 
         &:hover {
-            background: #b585cc;
+            background: #b194bf;
             cursor: pointer;
         }
 
