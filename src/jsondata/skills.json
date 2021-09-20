@@ -59,6 +59,13 @@
             ]
         },
         {
+            "skill": "Java",
+            "points": [
+                "Currently being used for completing labs in my compilers course",
+                "Expecting to be very familiar with the language by the end of the term"
+            ]
+        },
+        {
             "skill": "TypeScript",
             "points": [
                 "TypeScript was used entirely during my work at Genesys so I have a lot of front end experience with it",

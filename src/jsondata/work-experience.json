@@ -5,12 +5,11 @@
             "company": "Genesys",
             "date": "Jan 2021 - Apr 2021",
             "points": [
-                "Investigated and implemented fixes for bugs reported during tests",
+                "Led the implementation of a new feature for resetting client data that was highly requested by current users",
                 "Tested the i18n translations and implemented quality of life fixes for other languages, ensuring all users have the best possible experience",
-                "Led the implementation of a new feature that was highly requested by current users",
-                "Adapted UX designs from picture to reality and quickly adjusted to any updated or new specifications from UX during the implementation process",
+                "Adapted UX designs from picture to reality and quickly adjusted to any updated or new specifications during the implementation process",
                 "Assisted in determining new or updated API calls needed to implement upcoming features",
-                "Led meeting segments multiple times throughout the term to demonstrate new functionality or features that were in progress or recently finished for the purpose of updating documentation and getting feedback"
+                "Led meeting segments multiple times throughout the term to demonstrate new functionality for the purpose of updating documentation and getting feedback"
             ]
         },
         {
@@ -20,7 +19,7 @@
             "points": [
                 "Updated the main dashboard page of the site to use Vue instead of jQuery which allowed better integration with the rest of the platform",
                 "Fixed both functional and visual bugs across the platform, improving user experience",
-                "Developed several enhancements to the site as per client request to improve clarity and overall experience within the site",
+                "Developed several enhancements to the site as per client request to improve clarity and overall user experience",
                 "Created unit tests for new and existing code, greatly improving test coverage across the platform"
             ]
         },
@@ -30,10 +29,10 @@
             "date": "Sep 2019 - Dec 2019",
             "points": [
                 "Analyzed developer tickets and composed automatic test cases in Python to test new changes",
-                "Oversaw automated Jenkins jobs and helped fix failing test cases to improve results to around 90%+ success rate",
-                "Migrated Jenkins jobs required for deployments to the new server by rewriting them with updated functionality in Groovy",
+                "Oversaw automated Jenkins jobs and helped fix failing test cases to improve results to 90%+ success rate",
+                "Migrated Jenkins jobs required for deployments by rewriting them with updated functionality in Groovy",
                 "Developed a script to automatically run a number of basic smoke tests off of a build whenever requested in a GitHub PR",
-                "Created a Jenkins job to monitor the status of testing machines, reporting errors to QA to ensure machines were used effectively",
+                "Created a Jenkins job to monitor the status of testing machines and reporting errors to QA to ensure machines are being used effectively",
                 "Led a meeting to transfer basic knowledge and tips I had learned about Jenkins to newer employees with less experience"
             ]
         },
