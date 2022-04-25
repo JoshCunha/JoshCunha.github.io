@@ -13,6 +13,7 @@
                     :image="review.image"
                     :title="review.album"
                     :artist="review.artist"
+                    :shortReview="review.shortReview"
                     :reviewBlock="review.review"
                     :spotifyLink="review.spotifyLink"
                     :appleLink="review.appleLink"
@@ -56,6 +57,9 @@ export default {
 </script>
 
 <style lang="scss">
+.content {
+    background: var(--background-color-primary);
+}
 .recent-reviews {
     height: 100%;
     display: flex;
@@ -68,7 +72,7 @@ export default {
         font-weight: bold;
         font-size: 30px;
         text-align: left;
-        color: #272727;
+        color: var(--contrast-color-primary);
     }
 
     .review-block {
@@ -80,14 +84,14 @@ export default {
     }
 
     .see-all {
-        color: #3da5d9;
+        color: var(--link-color);
         text-align: left;
         margin-top: 10px;
         font-family: Helvetica;
         font-weight: bold;
 
         &:hover {
-            color: #4281a4;
+            color: var(--link-hover);
             cursor: pointer;
         }
     }

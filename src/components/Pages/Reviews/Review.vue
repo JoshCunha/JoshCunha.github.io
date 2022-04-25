@@ -2,8 +2,9 @@
     <div class="review">
         <img class="album-art" :src="image" width="250" height="250" />
         <span class="album-title">{{ title }} - {{ artist }}</span>
+        <div class="seperator" />
         <div class="paragraph-container">
-            <p class="paragraph" v-html="reviewBlock" />
+            <div class="paragraph" v-html="displayText" />
         </div>
         <div @click="openReview" class="see-full">See Full Review...</div>
         <div class="seperator" />
@@ -69,6 +70,10 @@ export default {
             type: String,
             default: "Kanye West"
         },
+        shortReview: {
+            type: String,
+            default: ""
+        },
         reviewBlock: {
             type: String,
             default: "No Review"
@@ -84,6 +89,11 @@ export default {
         appleLink: {
             type: String,
             required: false
+        }
+    },
+    computed: {
+        displayText() {
+            return this.shortReview ? this.shortReview : this.reviewBlock;
         }
     },
     components: {
@@ -110,15 +120,15 @@ export default {
 .review {
     display: flex;
     flex-direction: column;
-    background: #f0f0f0;
+    background: var(--item-background-color);
     height: 475px;
     width: 275px;
     border-radius: 20px;
     margin: 20px auto 10px auto;
-    box-shadow: 0px 0px 3px #ababab;
+    box-shadow: 0px 0px 3px var(--inactive-color);
 
     &:hover {
-        box-shadow: 0px 0px 5px #808080;
+        box-shadow: 0px 0px 5px var(--active-color);
     }
 
     .album-art {
@@ -127,36 +137,33 @@ export default {
         margin: 12.5px;
         margin-bottom: 10px;
         border-radius: 10px;
-        box-shadow: 0px 0px 5px #808080;
+        box-shadow: 0px 0px 5px var(--active-color);
     }
 
     .album-title {
         height: 36px;
         font-family: Helvetica;
         font-weight: bold;
-        color: #272727;
+        color: var(--contrast-color-primary);
         margin: 0px 12.5px;
     }
 
     .paragraph-container {
-        border: 1px solid #ababab;
-        background: #e0e0e0;
-        border-radius: 5px;
-        margin: 5px 5px;
+        display: flex;
         height: 100px;
 
         .paragraph {
             overflow-wrap: break-word;
             overflow: hidden;
-            text-align: left;
+            text-align: center;
             text-overflow: ellipsis;
             font-family: Helvetica;
-            margin: 5px 5px;
+            margin: auto 10px;
             display: -webkit-box;
             -webkit-line-clamp: 5;
             -webkit-box-orient: vertical;
             white-space: normal;
-            color: #272727;
+            color: var(--contrast-color-primary);
         }
     }
 
@@ -164,20 +171,20 @@ export default {
         font-weight: bold;
         font-family: Helvetica;
         font-size: 14px;
-        color: #ababab;
+        color: var(--inactive-color);
         text-align: left;
         margin: 0px 10px;
         width: fit-content;
 
         &:hover {
-            color: #808080;
+            color: var(--active-color);
             cursor: pointer;
         }
     }
 
     .seperator {
         height: 1px;
-        background: #e0e0e0;
+        background: var(--item-shaded-color);
         margin: 4px 10px
     }
 }
@@ -193,7 +200,7 @@ export default {
     }
     .empty {
         margin-top: 3px;
-        color: #272727;
+        color: var(--contrast-color-primary);
     }
 
     .music-links {
@@ -202,21 +209,21 @@ export default {
         margin-left: auto;
 
         .spotify-icon {
-            color: #ababab;
+            color: var(--inactive-color);
 
             &:hover {
-                color: #808080;
+                color: var(--active-color);
                 cursor: pointer;
             }
         }
 
         .apple-icon {
-            color: #ababab;
+            color: var(--inactive-color);
             margin-top: -2px;
             margin-left: 5px;
 
             &:hover {
-                color: #808080;
+                color: var(--active-color);
                 cursor: pointer;
             }
         }

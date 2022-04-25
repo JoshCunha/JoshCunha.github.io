@@ -11,7 +11,7 @@
         <div class="footer-content">
             <div class="position">
                 <span class="header">Current Position:</span>
-                <span class="subheader">3B Computer Engineering</span>
+                <span class="subheader">4A Computer Engineering</span>
                 <span class="subheader">School Term</span>
             </div>
             <div class="socials">
@@ -92,6 +92,7 @@ export default {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: var(--background-color-primary);
 
     .intro-box {
         display: flex;
@@ -103,7 +104,7 @@ export default {
             font-family: Helvetica;
             font-size: 50px;
             font-weight: bold;
-            color: #272727;
+            color: var(--contrast-color-primary);
             text-align: left;
             margin-bottom: 20px;
         }
@@ -113,7 +114,7 @@ export default {
             font-family: Helvetica;
             font-weight: bold;
             font-size: 40px;
-            color: #272727;
+            color: var(--contrast-color-primary);
             text-align: left
         }
     }
@@ -132,7 +133,7 @@ export default {
                 font-family: Helvetica;
                 font-size: 25px;
                 font-weight: bold;
-                color: #272727;
+                color: var(--contrast-color-primary);
                 text-align: left;
                 margin-bottom: 10px;
             }
@@ -141,7 +142,7 @@ export default {
                 font-family: Helvetica;
                 font-size: 20px;
                 font-weight: bold;
-                color: #272727;
+                color: var(--contrast-color-primary);
                 max-width: 250px;
                 text-align: left;
             }
@@ -159,12 +160,12 @@ export default {
                 .icon {
                     height: 35px;
                     width: 35px;
-                    color: #8d909b;
+                    color: var(--inactive-color);
                     margin: 10px;
 
                     &:hover {
                         cursor: pointer;
-                        color: #272727;
+                        color: var(--contrast-color-primary);
                 }
                 }
             }

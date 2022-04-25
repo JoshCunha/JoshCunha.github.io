@@ -35,12 +35,12 @@ export default {
     min-width: 200px;
     min-height: 40px;
     border-radius: 10px;
-    background: #f0f0f0;
-    border: 1px solid #808080;
+    background: var(--item-background-color);
+    border: 1px solid var(--active-color);
 
     .search-icon {
         font-weight: bold;
-        color: #272727;
+        color: var(--contrast-color-primary);
         margin: 10px 0px 0px 10px;
     }
 
@@ -50,10 +50,6 @@ export default {
         width: fit-content;
         height: 30px;
         margin: 4px 2px 0px 3px;
-    }
-
-    &:focus {
-        background: red;
     }
 }
 input:focus {

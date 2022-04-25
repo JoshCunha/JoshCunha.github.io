@@ -72,6 +72,7 @@ export default {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: var(--background-color-primary);
     
     .top {
         display: flex;
@@ -83,7 +84,7 @@ export default {
             font-family: Helvetica;
             font-weight: bold;
             font-size: 40px;
-            color: #272727;
+            color: var(--contrast-color-primary);
             text-align: left;
         }
 
@@ -92,7 +93,7 @@ export default {
             font-family: Helvetica;
             font-weight: bold;
             font-size: 20px;
-            color: #272727;
+            color: var(--contrast-color-primary);
             text-align: left;
         }
     }
@@ -108,7 +109,7 @@ export default {
             font-weight: bold;
             font-size: 25px;
             margin-bottom: 10px;
-            color: #272727;
+            color: var(--contrast-color-primary);
             text-align: left;
         }
 
@@ -116,20 +117,20 @@ export default {
             font-family: Helvetica;
             font-weight: bold;
             font-size: 17px;
-            color: #272727;
+            color: var(--contrast-color-primary);
             text-align: left;
             margin-bottom: 5px;
         }
 
         .learn-more {
-            color: #3da5d9;
+            color: var(--link-color);
             text-align: left;
             margin-top: 3px;
             font-family: Helvetica;
             font-weight: bold;
 
             &:hover {
-                color: #4281a4;
+                color: var(--link-hover);
                 cursor: pointer;
             }
         }

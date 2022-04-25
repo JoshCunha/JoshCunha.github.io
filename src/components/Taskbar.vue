@@ -23,6 +23,8 @@
             <span class="taskbar-element">MUSIC</span>
         </div>
 
+        <ThemeSwitcher v-if="home" /> 
+
         <div v-if="!home">
             <div 
                 v-for="item, index in content"
@@ -41,6 +43,8 @@
 </template>
 
 <script>
+import ThemeSwitcher from './ThemeSwitcher.vue';
+
 export default {
     name: "Taskbar",
     props: {
@@ -52,6 +56,9 @@ export default {
             type: Array,
             required: false
         }
+    },
+    components: {
+        ThemeSwitcher
     },
     methods: {
         toHome() {
@@ -75,9 +82,9 @@ export default {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #c3acce;
+    background: var(--item-special-color);
     height: 45px;
-    box-shadow: 0px 1px 3px #272727;
+    box-shadow: 0px 1px 10px var(--contrast-color-primary);
     z-index: 1;
 
     .taskbar-item {
@@ -87,14 +94,14 @@ export default {
         height: 100%;
 
         &:hover {
-            background: #b194bf;
+            background: var(--item-special-hover);
             cursor: pointer;
         }
 
         .taskbar-element {
             margin-left: 10px;
             margin-right: 10px;
-            color: #331e36;
+            color: var(--contrast-color-primary);
             font-weight: bold;
             font-family: Helvetica;
             font-size: 22px;
@@ -104,7 +111,7 @@ export default {
     .icon {
         height: 35px;
         width: 35px;
-        color: #331e36;
+        color: var(--contrast-color-primary);
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -115,7 +122,7 @@ export default {
         height: 100%;
 
         .taskbar-item:hover  {
-            background: #c3acce;
+            background: var(--item-special-color);
             cursor: default;
         }
     }

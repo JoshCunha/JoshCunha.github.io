@@ -74,11 +74,11 @@ export default {
     min-width: 200px;
     min-height: 40px;
     border-radius: 10px;
-    background: #f0f0f0;
-    border: 1px solid #808080;
+    background: var(--item-background-color);
+    border: 1px solid var(--active-color);
 
     .button-text {
-        color: #272727;
+        color: var(--contrast-color-primary);
         margin: 11px 0px 0px 10px;
     }
 
@@ -87,11 +87,11 @@ export default {
         margin: 11px 10px 0px auto;
         height: 20px;
         width: 20px;
-        color: #272727;
+        color: var(--contrast-color-primary);
     }
 
     &:hover {
-        background: #e0e0e0;
+        background: var(--item-shaded-color);
         cursor: pointer;
     }
 }
@@ -99,7 +99,7 @@ export default {
 .dropdown-items-container {
     display: flex;
     flex-direction: column;
-    background: #f0f0f0;
+    background: var(--item-background-color);
     width: fit-content;
     min-width: 200px;
     position: absolute;
@@ -111,7 +111,7 @@ export default {
 
         &:hover {
             cursor: pointer;
-            background: #e0e0e0;
+            background: var(--item-shaded-color);
         }
     }
 }

@@ -3,15 +3,15 @@ thead {
     .p-column-title {
         width: 100%;
         font-family: Helvetica;
-        color: #272727;
+        color: var(--contrast-color-primary);
         font-weight: bold;
         text-align: left;
         margin: 10px 0px 10px 10px;
     }
 
     th {
-        background: #c3acce;
-        border: 1px solid #272727;
+        background: var(--item-special-color);
+        border: 1px solid var(--contrast-color-primary);
         border-top: none;
     }
 }
@@ -20,26 +20,30 @@ tbody {
 
     td {
         text-align: left;
-        color: #272727;
+        color: var(--contrast-color-primary);
         font-family: Helvetica;
-        border: 1px solid #272727 !important;
+        border: 1px solid var(--contrast-color-primary) !important;
         padding: 5px 10px 5px 10px;
         border-top: none !important;
         border-bottom: none !important;
     }
 
+    tr {
+        background: var(--background-color-primary);
+    }
+
     tr:nth-child(2n) {
-        background: #eeeeee;
+        background: var(--background-color-secondary);
     }
 }
 
 .include-border {
-    border-bottom: 1px solid #272727;
-    border-top: 1px solid #272727;
+    border-bottom: 1px solid var(--contrast-color-primary);
+    border-top: 1px solid var(--contrast-color-primary);
 }
 
 .no-head {
-    border-top: 1px solid #272727;
+    border-top: 1px solid var(--contrast-color-primary);
 
     thead {
         display: none;
@@ -47,17 +51,17 @@ tbody {
 }
 
 .p-datatable-row-expansion {
-    border-top: 1px solid #272727;
-    border-bottom: 1px solid #272727;
+    border-top: 1px solid var(--contrast-color-primary);
+    border-bottom: 1px solid var(--contrast-color-primary);
 }
 
 .clickable-rows tbody tr:hover{
     cursor: pointer;
-    background: #dddddd;
+    background: var(--background-color-tertiary);
 }
 
 .p-sortable-column-icon {
-    color: #272727;
+    color: var(--contrast-color-primary);
     margin-right: 5px;
 }
 

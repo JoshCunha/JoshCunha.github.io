@@ -120,7 +120,7 @@ export default {
 
             .album-art-modal {
                 border-radius: 5px;
-                box-shadow: 0px 0px 5px #808080;
+                box-shadow: 0px 0px 5px var(--active-color);
             }
         }
 
@@ -133,7 +133,7 @@ export default {
             .album-title {
                 font-family: Helvetica;
                 font-weight: bold;
-                color: #272727;
+                color: var(--contrast-color-primary);
                 font-size: 30px;
                 text-align: left;
                 margin-bottom: 10px;
@@ -142,7 +142,7 @@ export default {
             .album-artist {
                 font-family: Helvetica;
                 font-weight: bold;
-                color: #272727;
+                color: var(--contrast-color-primary);
                 font-size: 25px;
                 text-align: left;
                 margin-bottom: 10px;
@@ -159,9 +159,9 @@ export default {
         display: flex;
         max-height: 250px;
         height: 250px;
-        background: #e0e0e0;
+        background: var(--item-shaded-color);
         margin: 20px;
-        border: 1px solid #ababab;
+        border: 1px solid var(--inactive-color);
         border-radius: 10px;
 
         .review-paragraph {
@@ -169,7 +169,7 @@ export default {
             max-height: 100%;
             overflow-y: auto;
             text-align: left;
-            color: #272727;
+            color: var(--contrast-color-primary);
         }
     }
 }
@@ -185,7 +185,7 @@ export default {
     }
     .empty {
         margin-top: 3px;
-        color: #272727;
+        color: var(--contrast-color-primary);
     }
 
     .music-links {
@@ -194,21 +194,21 @@ export default {
         margin-left: auto;
 
         .spotify-icon {
-            color: #ababab;
+            color: var(--inactive-color);
 
             &:hover {
-                color: #808080;
+                color: var(--active-color);
                 cursor: pointer;
             }
         }
 
         .apple-icon {
-            color: #ababab;
+            color: var(--inactive-color);
             margin-top: -2px;
             margin-left: 5px;
 
             &:hover {
-                color: #808080;
+                color: var(--active-color);
                 cursor: pointer;
             }
         }

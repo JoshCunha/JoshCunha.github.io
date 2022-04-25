@@ -64,7 +64,7 @@ export default {
     z-index: 9;
 
     .modal-backdrop {
-        background: rgba(0, 0, 0, 0.3);
+        background: var(--modal-background);
         position: fixed;
         top: 0;
         right: 0;
@@ -74,7 +74,7 @@ export default {
     }
 
     .modal-content {
-        background: white;
+        background: var(--background-color-primary);
         position: relative;
         width: 60%;
         height: 575px;
@@ -92,16 +92,16 @@ export default {
                 font-weight: bold;
                 font-size: 30px;
                 margin: 10px 0px 0px 3%;
-                color: #272727;
+                color: var(--contrast-color-primary);
             }
 
             .close-button {
                 margin: 10px 10px 0px auto;
                 font-weight: bold;
-                color: #808080;
+                color: var(--inactive-color);
 
                 &:hover {
-                    color: #272727;
+                    color: var(--contrast-color-primary);
                     cursor: pointer;
                 }
             }

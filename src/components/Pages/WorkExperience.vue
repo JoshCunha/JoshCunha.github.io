@@ -1,29 +1,31 @@
 <template>
-    <Taskbar :home="false" :content="['Work Experience']"/>
-    <div class="work-experience">
-        <span class="header">Work Experience</span>
-        <DataTable :value="experience" v-model:expandedRows="expandedRows" class="include-border" breakpoint="2px">
-            <Column field="position" header="Position" />
-            <Column field="company" header="Company" />
-            <Column field="date" header="Date" />
-            <Column :expander="true" headerStyle="width: 46px" />
-            <template #expansion="slotProps">
-                <div class="expanded">
-                    <div class="general-data">
-                        <span class="role">{{slotProps.data.position}} at {{slotProps.data.company}}</span>
-                        <span class="date">{{slotProps.data.date}}</span>
+    <div class="page">
+        <Taskbar :home="false" :content="['Work Experience']"/>
+        <div class="work-experience">
+            <span class="header">Work Experience</span>
+            <DataTable :value="experience" v-model:expandedRows="expandedRows" class="include-border" breakpoint="2px">
+                <Column field="position" header="Position" />
+                <Column field="company" header="Company" />
+                <Column field="date" header="Date" />
+                <Column :expander="true" headerStyle="width: 46px" />
+                <template #expansion="slotProps">
+                    <div class="expanded">
+                        <div class="general-data">
+                            <span class="role">{{slotProps.data.position}} at {{slotProps.data.company}}</span>
+                            <span class="date">{{slotProps.data.date}}</span>
+                        </div>
+                        <ul id="more-info">
+                            <li v-for="item, index in getItems(slotProps.data)" :key="index">
+                                {{ item }}
+                            </li>
+                        </ul>
                     </div>
-                    <ul id="more-info">
-                        <li v-for="item, index in getItems(slotProps.data)" :key="index">
-                            {{ item }}
-                        </li>
-                    </ul>
-                </div>
-            </template>
-        </DataTable>
-        <span class="subheader">
-            Click the <i class="pi pi-chevron-right" /> to expand a row
-        </span>
+                </template>
+            </DataTable>
+            <span class="subheader">
+                Click the <i class="pi pi-chevron-right" /> to expand a row
+            </span>
+        </div>
     </div>
 </template>
 
@@ -62,6 +64,13 @@ export default {
 </script>
 
 <style lang="scss">
+.page {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: var(--background-color-primary);
+}
 .work-experience {
     width: auto;
     display: flex;
@@ -74,7 +83,7 @@ export default {
         font-weight: bold;
         font-size: 40px;
         margin-bottom: 10px;
-        color: #272727;
+        color: var(--contrast-color-primary);
         text-align: left;
     }
 
@@ -84,7 +93,7 @@ export default {
         font-size: 15px;
         font-family: Helvetica;
         margin-top: 5px;
-        color: #272727;
+        color: var(--contrast-color-primary);
     }
 
     .expanded {

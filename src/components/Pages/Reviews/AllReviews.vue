@@ -1,40 +1,43 @@
 <template>
-    <Taskbar :home="false" :content="['Reviews']" />
-    <div class="music-reviews">
-        <span class="title">Music Reviews</span>
-        <div class="reviews-header">
-            <Search class="searcher" @searchUpdate="updateSearch" />
-            <div class="sorters">
-                <span v-if="!list" class="sort-by">Sort By: </span>
-                <Dropdown
-                    v-if="!list"
-                    @updateDropdown="newSort"
-                    class="sort-dropdown"
-                    defaultSelect="Newest"
-                    :options="sortOptions"
-                    :placeholder="'Highest Rated'"
+    <div class="page">
+        <Taskbar :home="false" :content="['Reviews']" />
+        <div class="music-reviews">
+            <span class="title">Music Reviews</span>
+            <div class="reviews-header">
+                <Search class="searcher" @searchUpdate="updateSearch" />
+                <div class="sorters">
+                    <span v-if="!list" class="sort-by">Sort By: </span>
+                    <Dropdown
+                        v-if="!list"
+                        @updateDropdown="newSort"
+                        class="sort-dropdown"
+                        defaultSelect="Newest"
+                        :options="sortOptions"
+                        :placeholder="'Highest Rated'"
+                    />
+                </div>
+                <i 
+                    @click="toggleDisplay"
+                    class="pi disp-switch"
+                    :class="list ? 'pi-th-large' : 'pi-list'" 
                 />
             </div>
-            <i 
-                @click="toggleDisplay"
-                class="pi disp-switch"
-                :class="list ? 'pi-th-large' : 'pi-list'" 
-            />
+            <div class="reviews-container"  v-if="!list">
+                <Review
+                    v-for="review,index in sortedReviews"
+                    :key="index"
+                    :image="review.image"
+                    :title="review.album"
+                    :artist="review.artist"
+                    :shortReview="review.shortReview"
+                    :reviewBlock="review.review"
+                    :spotifyLink="review.spotifyLink"
+                    :appleLink="review.appleLink"
+                    :rating="review.rating"
+                />
+            </div>
+            <ReviewList v-if="list" :reviewsIn="sortedReviews" />
         </div>
-        <div class="reviews-container"  v-if="!list">
-            <Review
-                v-for="review,index in sortedReviews"
-                :key="index"
-                :image="review.image"
-                :title="review.album"
-                :artist="review.artist"
-                :reviewBlock="review.review"
-                :spotifyLink="review.spotifyLink"
-                :appleLink="review.appleLink"
-                :rating="review.rating"
-            />
-        </div>
-        <ReviewList v-if="list" :reviewsIn="sortedReviews" />
     </div>
 </template>
 
@@ -120,6 +123,13 @@ export default {
 </script>
 
 <style lang="scss">
+.page {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--background-color-primary);
+}
 .music-reviews {
     display: flex;
     flex-direction: column;
@@ -130,7 +140,7 @@ export default {
         font-weight: bold;
         font-size: 35px;
         text-align: left;
-        color: #272727;
+        color: var(--contrast-color-primary);
     }
 
     .reviews-header {
@@ -148,7 +158,7 @@ export default {
                 margin: 8px 10px 0px 5%;
                 font-style: Helvetica;
                 font-weight: bold;
-                color: #272727;
+                color: var(--contrast-color-primary);
                 font-size: 20px;
             }
         }
@@ -157,11 +167,11 @@ export default {
             margin: 10px 10px 0px auto;
             font-size: 25px;
             font-weight: bold;
-            color: #808080;
+            color: var(--inactive-color);
 
             &:hover {
                 cursor: pointer;
-                color: #272727;
+                color: var(--contrast-color-primary);
             }
         }
     }

@@ -7,6 +7,7 @@ import Skills from './components/Pages/Skills.vue';
 import AllReviews from './components/Pages/Reviews/AllReviews.vue';
 
 // styles
+import './styles/main.scss';
 import 'normalize.css';
 import './styles/TableStyle.scss';
 import 'primeicons/primeicons.css';

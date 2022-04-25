@@ -100,7 +100,7 @@ export default {
         .list-img {
             width: 50px;
             border-radius: 5px;
-            box-shadow: 0px 0px 2px #808080;
+            box-shadow: 0px 0px 2px var(--active-color);
         }
 
         .album-title {
@@ -129,11 +129,11 @@ export default {
 
         .golden {
             color: #f3d34a;
-            text-shadow: 0px 0px 2px #272727;
+            text-shadow: 0px 0px 2px var(--contrast-color-primary);
         }
         .empty {
-            color: #272727;
-            text-shadow: 0px 0px 2px #272727;
+            color: var(--contrast-color-primary);
+            text-shadow: 0px 0px 2px var(--contrast-color-primary);
         }
     }
 }

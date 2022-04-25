@@ -1,24 +1,26 @@
 <template>
-    <Taskbar :home="false" :content="['Skills and Technologies']" />
-    <div class="skills-technologies">
-        <span class="header">Skills and Technologies</span>
-        <DataTable :value="skills" v-model:expandedRows="expandedRows" class="include-border no-head" responsiveLayout="scroll">
-            <Column field="skill" />
-            <Column :expander="true" headerStyle="width: 36px" />
-            <template #expansion="slotProps">
-                <div class="expanded">
-                    <span class="title">{{slotProps.data.skill}}</span>
-                    <ul id="more-info">
-                        <li v-for="item, index in getItems(slotProps.data)" :key="index">
-                            {{ item }}
-                        </li>
-                    </ul>
-                </div>
-            </template>
-        </DataTable>
-        <span class="subheader">
-            Click the <i class="pi pi-chevron-right" /> to expand a row
-        </span>
+    <div class="page">
+        <Taskbar :home="false" :content="['Skills and Technologies']" />
+        <div class="skills-technologies">
+            <span class="header">Skills and Technologies</span>
+            <DataTable :value="skills" v-model:expandedRows="expandedRows" class="include-border no-head" responsiveLayout="scroll">
+                <Column field="skill" />
+                <Column :expander="true" headerStyle="width: 36px" />
+                <template #expansion="slotProps">
+                    <div class="expanded">
+                        <span class="title">{{slotProps.data.skill}}</span>
+                        <ul id="more-info">
+                            <li v-for="item, index in getItems(slotProps.data)" :key="index">
+                                {{ item }}
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+            </DataTable>
+            <span class="subheader">
+                Click the <i class="pi pi-chevron-right" /> to expand a row
+            </span>
+        </div>
     </div>
 </template>
 
@@ -57,6 +59,13 @@ export default {
 </script>
 
 <style lang="scss">
+.page {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--background-color-primary);
+}
 .skills-technologies {
     display: flex;
     flex-direction: column;
@@ -69,7 +78,7 @@ export default {
         font-weight: bold;
         font-size: 40px;
         margin-bottom: 10px;
-        color: #272727;
+        color: var(--contrast-color-primary);
         text-align: left;
     }
 
@@ -79,7 +88,7 @@ export default {
         font-size: 15px;
         font-family: Helvetica;
         margin-top: 5px;
-        color: #272727;
+        color: var(--contrast-color-primary);
     }
 
     tr {
