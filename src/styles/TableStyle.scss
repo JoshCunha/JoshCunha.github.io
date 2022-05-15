@@ -95,6 +95,7 @@ tbody {
 .p-row-toggler {
     background: none;
     border: none;
+    color: var(--contrast-color-primary);
 
     &:hover {
         cursor: pointer;
