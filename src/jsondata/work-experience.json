@@ -1,15 +1,25 @@
 {
     "data": [
         {
+            "position": "Front End Developer Intern",
+            "company": "Splunk",
+            "date": "Jan 2022 - Apr 2022",
+            "points": [
+                "Implemented a new CLI command to create front end applications with the ability to opt in or out of optional features on creation using TypeScript, greatly reducing the work needed to make a new front end app",
+                "Designed and implemented a bot for auto-labelling GitLab merge requests based on changes made, streamlining merge request workflows",
+                "Created a homepage using React to have a one-stop landing page for all of our team's various documentation",
+                "Debugged and finalized a feature to mock backend responses for Cypress Tests, freeing them from potential API issues, making test runs more reliable"
+            ]
+        },
+        {
             "position": "Web Software Developer Intern",
             "company": "Genesys",
             "date": "Jan 2021 - Apr 2021",
             "points": [
-                "Led the implementation of a new feature for resetting client data that was highly requested by current users",
-                "Tested the i18n translations and implemented quality of life fixes for other languages, ensuring all users have the best possible experience",
-                "Adapted UX designs from picture to reality and quickly adjusted to any updated or new specifications during the implementation process",
-                "Assisted in determining new or updated API calls needed to implement upcoming features",
-                "Led meeting segments multiple times throughout the term to demonstrate new functionality for the purpose of updating documentation and getting feedback"
+                "Led the implementation of a new, highly requested feature for resetting client data, developed using Vue",
+                "Adapted UX designs from concept to code, making necessary changes as per updated project specifications during the development process",
+                "Tested i18n translations and implemented quality-of-life fixes for other languages, ensuring a better user experience for a wider range of users",
+                "Participated in design meetings to decide on creating or modifying API calls required to develop upcoming features"
             ]
         },
         {
@@ -17,7 +27,7 @@
             "company": "Doorr",
             "date": "May 2020 - Aug 2020",
             "points": [
-                "Updated the main dashboard page of the site to use Vue instead of jQuery which allowed better integration with the rest of the platform",
+                "Participated in the migration from jQuery to Vue, updating the main dashboard page of the company website, enabling improved integration with the rest of the platform",
                 "Fixed both functional and visual bugs across the platform, improving user experience",
                 "Developed several enhancements to the site as per client request to improve clarity and overall user experience",
                 "Created unit tests for new and existing code, greatly improving test coverage across the platform"
@@ -29,11 +39,11 @@
             "date": "Sep 2019 - Dec 2019",
             "points": [
                 "Analyzed developer tickets and composed automatic test cases in Python to test new changes",
-                "Oversaw automated Jenkins jobs and helped fix failing test cases to improve results to 90%+ success rate",
+                "Oversaw automated Jenkins jobs and fixed failing test cases, improving to 90%+ success rate",
                 "Migrated Jenkins jobs required for deployments by rewriting them with updated functionality in Groovy",
-                "Developed a script to automatically run a number of basic smoke tests off of a build whenever requested in a GitHub PR",
-                "Created a Jenkins job to monitor the status of testing machines and reporting errors to QA to ensure machines are being used effectively",
-                "Led a meeting to transfer basic knowledge and tips I had learned about Jenkins to newer employees with less experience"
+                "Developed a script to automatically run basic smoke tests for a build whenever requested with a comment in a PR",
+                "Created a Jenkins job to monitor the status of testing machines and report errors to ensure machines are being used effectively and have maximum uptime",
+                "Led a meeting to transfer Jenkins knowledge I had learned throughout the term to newer employees"
             ]
         },
         {

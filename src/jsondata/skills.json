@@ -8,11 +8,25 @@
             ]
         },
         {
+            "skill": "React",
+            "points": [
+                "Used React in my front end position at Splunk",
+                "Had many chances to read and write React code making me pretty comfortable with it"
+            ]
+        },
+        {
             "skill": "JavaScript",
             "points": [
                 "Where there is front end there is often JavaScript and at Doorr I used it a lot",
                 "This website is also built using JavaScript with Vue",
                 "My knowledge is mostly based in web development but I'm pretty confident I could use JavaScript in non-web contexts well"
+            ]
+        },
+        {
+            "skill": "TypeScript",
+            "points": [
+                "TypeScript was used entirely during my work at Genesys so I have a lot of front end experience with it",
+                "TypeScript was also used during my Splunk term and there I got to use it outside the context of just front end development"
             ]
         },
         {
@@ -61,15 +75,8 @@
         {
             "skill": "Java",
             "points": [
-                "Currently being used for completing labs in my compilers course",
-                "Expecting to be very familiar with the language by the end of the term"
-            ]
-        },
-        {
-            "skill": "TypeScript",
-            "points": [
-                "TypeScript was used entirely during my work at Genesys so I have a lot of front end experience with it",
-                "Similar to JavaScript, I only know TypeScript in the web development context but I'm confident I could use it outside web development as well"
+                "Used in school for completing labs and assignments in my compilers and distributed computing courses",
+                "Quite familiar with the language as I've writted a lot of Java code for these courses"
             ]
         },
         {
