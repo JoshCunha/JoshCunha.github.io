@@ -5,12 +5,15 @@
             <i class="pi icon" :class="showDropdown ? 'pi-angle-down' : 'pi-angle-right'" />
         </div>
         <div v-if="showDropdown" class="dropdown-items-container">
-            <span
-                v-for="item in options"
-                class="dropdown-item"
-                :key="item[optionCode]"
-                @click="selectItem(item)"
-            >{{ item[optionName] }}</span>
+            <div v-for="(item,i) in options" :key="item[optionCode]" class="dd-for-wrapper">
+                <span
+                    class="dropdown-item"
+                    @click="selectItem(item)"
+                >
+                    {{ item[optionName] }}
+                </span>
+                <span v-if="i !== options.length - 1" class="dd-divider" />
+            </div>
         </div>
     </div>
 </template>
@@ -97,21 +100,33 @@ export default {
 }
 
 .dropdown-items-container {
-    display: flex;
-    flex-direction: column;
     background: var(--item-background-color);
     width: fit-content;
     min-width: 200px;
     position: absolute;
     border-radius: 10px;
 
-    .dropdown-item {
-        padding: 4px 4px;
+    .dd-for-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         border-radius: inherit;
 
-        &:hover {
-            cursor: pointer;
-            background: var(--item-shaded-color);
+        .dropdown-item {
+            padding: 10px 4px;
+            border-radius: inherit;
+            color: var(--contrast-color-primary);
+
+            &:hover {
+                cursor: pointer;
+                background: var(--item-shaded-color);
+            }
+        }
+
+        .dd-divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--active-color);
         }
     }
 }

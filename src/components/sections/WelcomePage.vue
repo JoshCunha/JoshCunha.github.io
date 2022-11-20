@@ -11,8 +11,8 @@
         <div class="footer-content">
             <div class="position">
                 <span class="header">Current Position:</span>
-                <span class="subheader">4A Computer Engineering</span>
-                <span class="subheader">School Term</span>
+                <span class="subheader">Front End Engineer Intern</span>
+                <span class="subheader">at Faire</span>
             </div>
             <div class="socials">
                 <div class="logo-container">

@@ -1,6 +1,15 @@
 {
     "data": [
         {
+            "position": "Front End Engineer Intern",
+            "company": "Faire",
+            "date": "Sep 2022 - Present",
+            "points": [
+                "Led the development of a new feature for standardizing delivery nomenclature across the platform—allocating tasks to other engineers as needed, and managing release and rollout",
+                "Assisted engineers with their new features by completing web-specific tasks using React and TypeScript"
+            ]
+        },
+        {
             "position": "Front End Developer Intern",
             "company": "Splunk",
             "date": "Jan 2022 - Apr 2022",

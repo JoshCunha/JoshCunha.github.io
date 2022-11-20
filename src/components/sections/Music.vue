@@ -2,7 +2,7 @@
     <div class="content">
         <div class="top">
             <span class="title">Music</span>
-            <span class="subtitle">A compilation of reviews done by me for the albums I've listened to</span>
+            <span class="subtitle">A compilation of reviews for albums I've listened to</span>
         </div>
         <div class="recent-reviews">
             <span class="title">Recent Reviews</span>
@@ -51,7 +51,7 @@ export default {
 
     created() {
         let allReviews = musicReviews.data;
-        this.sortedReviews = allReviews.sort((a,b) => moment(b.date).diff(a.date)).slice(0, 5);
+        this.sortedReviews = allReviews.sort((a,b) => moment(b.date).diff(a.date));
     }
 }
 </script>
@@ -81,6 +81,8 @@ export default {
         flex-wrap: wrap;
         height: 505px;
         overflow: hidden;
+        gap: 10px;
+        padding: 5px;
     }
 
     .see-all {

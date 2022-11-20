@@ -2,7 +2,7 @@
     <div class="content">
         <div class="top">
             <span class="title">About Me</span>
-            <span class="subtitle">A sort of online resume, showcasing my education, skills, and work experience</span>
+            <span class="subtitle">An online resume. Showcasing my work experience, skills, and education.</span>
         </div>
         <div class="about-section">
             <span class="header">Work Experience</span>
@@ -26,7 +26,7 @@
                 Candidate for Bachelor of Applied Science, University of Waterloo 2018-2023
             </span>
             <span class="subheader indent">
-                Cumulative Average: 88.27%
+                Cumulative Average: 89.04%
             </span>
         </div>
     </div>

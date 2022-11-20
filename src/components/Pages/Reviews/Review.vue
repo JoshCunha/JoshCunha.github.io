@@ -1,5 +1,5 @@
 <template>
-    <div class="review">
+    <div @click="openReview" class="review">
         <img class="album-art" :src="image" width="250" height="250" />
         <span class="album-title">{{ title }} - {{ artist }}</span>
         <div class="seperator" />
@@ -14,7 +14,7 @@
             <div class="music-links">
                 <svg
                     v-if="spotifyLink"
-                    @click="toSpotify"
+                    @click.stop="toSpotify"
                     class="spotify-icon"
                     fill="currentColor"
                     width="24"
@@ -27,7 +27,7 @@
                 </svg>
                 <svg
                     v-if="appleLink"
-                    @click="toAppleMusic"
+                    @click.stop="toAppleMusic"
                     class="apple-icon"
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
@@ -129,6 +129,7 @@ export default {
 
     &:hover {
         box-shadow: 0px 0px 5px var(--active-color);
+        cursor: pointer;
     }
 
     .album-art {
