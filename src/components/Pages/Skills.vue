@@ -28,7 +28,7 @@
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import Taskbar from '../Taskbar.vue';
-import skillAndTech from '../../jsondata/skills.json';
+import skillAndTech from '../../data/skills.json';
 
 export default {
     name: "Skills",

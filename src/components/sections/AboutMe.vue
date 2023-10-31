@@ -35,8 +35,8 @@
 <script>
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
-import workExperience from '../../jsondata/work-experience.json';
-import skillAndTech from '../../jsondata/skills.json';
+import workExperience from '../../data/work-experience.json';
+import skillAndTech from '../../data/skills.json';
 
 export default {
     name: "AboutMe",

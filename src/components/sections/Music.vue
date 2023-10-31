@@ -28,7 +28,7 @@
 <script>
 import moment from 'moment';
 import Review from '../Pages/Reviews/Review.vue';
-import musicReviews from '../../jsondata/reviews.json';
+import musicReviews from '../../data/reviews.json';
 
 export default {
     name: "Music",

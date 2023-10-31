@@ -48,7 +48,7 @@ import Review from './Review.vue';
 import Dropdown from '../../Dropdown.vue';
 import Search from '../../Search.vue';
 import ReviewList from './ReviewList.vue';
-import reviewJson from '../../../jsondata/reviews.json';
+import reviewJson from '../../../data/reviews.json';
 
 export default {
     name: "AllReviews",

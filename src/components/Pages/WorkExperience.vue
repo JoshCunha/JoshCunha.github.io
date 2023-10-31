@@ -32,7 +32,7 @@
 <script>
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
-import workExperience from '../../jsondata/work-experience.json';
+import workExperience from '../../data/work-experience.json';
 import Taskbar from '../Taskbar.vue';
 
 export default {
