@@ -32,7 +32,7 @@
                 class="tskbr-list-container"
             >
                 <div class="taskbar-item">
-                    <span class="taskbar-element">></span>
+                    <span class="taskbar-element"></span>
                 </div>
                 <div class="taskbar-item">
                     <span class="taskbar-element">{{ item }}</span>

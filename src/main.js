@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import App from './App.vue';
 import Home from './Home.vue';
+import Blackjack from './components/Pages/Blackjack.vue';
 // import WorkExperience from './components/Pages/WorkExperience.vue';
 // import Skills from './components/Pages/Skills.vue';
 // import AllReviews from './components/Pages/Reviews/AllReviews.vue';
@@ -13,7 +14,8 @@ import './styles/TableStyle.scss';
 import 'primeicons/primeicons.css';
 
 const routes = [
-    { path: '/', component: Home }
+    { path: '/', component: Home },
+    { path: '/blackjack', component: Blackjack }
     // { path: '/workexperience', component: WorkExperience },
     // { path: '/skills', component: Skills },
     // { path: '/reviews', component: AllReviews }
