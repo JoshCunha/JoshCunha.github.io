@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        <PlayingCard :visible="true" :cardID="7" />
+        <PlayingCard :visible="true" :cardID="12" />
     </div>
 </template>
 

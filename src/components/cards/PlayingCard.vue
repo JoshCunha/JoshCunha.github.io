@@ -3,24 +3,39 @@
         <div v-if="!visible" class="card-back" />
         <div v-if="visible" class="card-front">
             <div class="card-num">
-                {{ getValue(cardID) }}
-                <Diamond />
+                {{ handleTen(cardValue) }}
+                <Club v-if="cardSuit == 'C'" />
+                <Diamond v-if="cardSuit == 'D'" />
+                <Heart v-if="cardSuit == 'H'" />
+                <Spade v-if="cardSuit == 'S'" />
             </div>
+            <SuitDisplay :value="cardValue" :suit="cardSuit" />
             <div class="card-num upsidedown">
-                {{ getValue(cardID) }}
-                <Diamond />
+                {{ handleTen(cardValue) }}
+                <Club v-if="cardSuit == 'C'" />
+                <Diamond v-if="cardSuit == 'D'" />
+                <Heart v-if="cardSuit == 'H'" />
+                <Spade v-if="cardSuit == 'S'" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Club from "./suits/Club.vue";
 import Diamond from "./suits/Diamond.vue";
+import Heart from "./suits/Heart.vue";
+import Spade from "./suits/Spade.vue";
+import SuitDisplay from "./SuitDisplay.vue";
 
 export default {
     name: "PlayingCard",
     components: {
-        Diamond
+        Club,
+        Diamond,
+        Heart,
+        Spade,
+        SuitDisplay
     },
     props: {
         cardID: {
@@ -32,9 +47,9 @@ export default {
             default: false
         }
     },
-    methods: {
-        getValue(card_id) {
-            let val = card_id % 13;
+    computed: {
+        cardValue() {
+            let val = this.cardID % 13;
             if (val == 0) {
                 return "A";
             } else if (val >= 10) {
@@ -47,12 +62,13 @@ export default {
                         return "K";
                 }
             } else {
-                return val;
+                return val + 1;
             }
+            return 0;
         },
 
-        getSuit(card_id) {
-            let res = card_id/13;
+        cardSuit() {
+            let res = Math.floor(this.cardID/13);
             switch (res) {
                 case 0:
                     return "S";
@@ -62,6 +78,16 @@ export default {
                     return "H";
                 case 3:
                     return "D"
+            }
+            return "N";
+        }
+    },
+    methods: {
+        handleTen(val) {
+            if (val == 10) {
+                return "I0"
+            } else {
+                return val
             }
         }
     }
@@ -96,7 +122,9 @@ export default {
         flex-direction: row;
 
         .card-num {
-            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 20px;
+            font-size: 20px;
             font-weight: 900;
             display: flex;
             flex-direction: column;
