@@ -1,6 +1,10 @@
 <template>
     <div class="page">
-        <PlayingCard :visible="true" :cardID="12" />
+        <PlayingCard :visible="true" :cardID="10" />
+        <PlayingCard :visible="true" :cardID="23" />
+        <PlayingCard :visible="true" :cardID="36" />
+        <PlayingCard :visible="true" :cardID="50" />
+        <PlayingCard :visible="false" :cardID="50" />
     </div>
 </template>
 
@@ -21,5 +25,8 @@ export default {
     height: 100%;
     min-height: 100vh;
     background-color: green;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 </style>

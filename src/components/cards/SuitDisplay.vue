@@ -1,134 +1,49 @@
 <template>
     <div class="suit-container">
-        <div v-if="!isFaceCard && suit == 'C'" class="non-face-card">
+        <div v-if="!isFaceCard" class="non-face-card">
             <div class="suit-col">
-                <Club
+                <SuitPicker
                     v-for="index in firstLastCols"
                     :key="index"
                     :size="50"
+                    :suit="suit"
                     class="suit-item"
                     :class="addFlip(index, firstLastCols)"
                 />
             </div>
-            <div v-if="!isFaceCard" class="suit-col">
-                <Club
+            <div class="suit-col">
+                <SuitPicker
                     v-for="index in middleCol"
                     :key="index"
                     :size="50"
+                    :suit="suit"
                     class="suit-item"
                     :class="addFlip(index, middleCol)"
                 />
             </div>
-            <div v-if="!isFaceCard" class="suit-col">
-                <Club
-                    v-for="index in firstLastCols"
-                    :key="index"
-                    :size="50"
-                    class="suit-item"
-                    :class="addFlip(index, firstLastCols)"
-                />
-            </div>
-        </div>
-        <div v-if="!isFaceCard && suit == 'D'" class="non-face-card">
             <div class="suit-col">
-                <Diamond
+                <SuitPicker
                     v-for="index in firstLastCols"
                     :key="index"
                     :size="50"
-                    class="suit-item"
-                    :class="addFlip(index, firstLastCols)"
-                />
-            </div>
-            <div v-if="!isFaceCard" class="suit-col">
-                <Diamond
-                    v-for="index in middleCol"
-                    :key="index"
-                    :size="50"
-                    class="suit-item"
-                    :class="addFlip(index, middleCol)"
-                />
-            </div>
-            <div v-if="!isFaceCard" class="suit-col">
-                <Diamond
-                    v-for="index in firstLastCols"
-                    :key="index"
-                    :size="50"
-                    class="suit-item"
-                    :class="addFlip(index, firstLastCols)"
-                />
-            </div>
-        </div>
-        <div v-if="!isFaceCard && suit == 'H'" class="non-face-card">
-            <div class="suit-col">
-                <Heart
-                    v-for="index in firstLastCols"
-                    :key="index"
-                    :size="50"
-                    class="suit-item"
-                    :class="addFlip(index, firstLastCols)"
-                />
-            </div>
-            <div v-if="!isFaceCard" class="suit-col">
-                <Heart
-                    v-for="index in middleCol"
-                    :key="index"
-                    :size="50"
-                    class="suit-item"
-                    :class="addFlip(index, middleCol)"
-                />
-            </div>
-            <div v-if="!isFaceCard" class="suit-col">
-                <Heart
-                    v-for="index in firstLastCols"
-                    :key="index"
-                    :size="50"
-                    class="suit-item"
-                    :class="addFlip(index, firstLastCols)"
-                />
-            </div>
-        </div>
-        <div v-if="!isFaceCard && suit == 'S'" class="non-face-card">
-            <div class="suit-col">
-                <Spade
-                    v-for="index in firstLastCols"
-                    :key="index"
-                    :size="50"
-                    class="suit-item"
-                    :class="addFlip(index, firstLastCols)"
-                />
-            </div>
-            <div v-if="!isFaceCard" class="suit-col">
-                <Spade
-                    v-for="index in middleCol"
-                    :key="index"
-                    :size="50"
-                    class="suit-item"
-                    :class="addFlip(index, middleCol)"
-                />
-            </div>
-            <div v-if="!isFaceCard" class="suit-col">
-                <Spade
-                    v-for="index in firstLastCols"
-                    :key="index"
-                    :size="50"
+                    :suit="suit"
                     class="suit-item"
                     :class="addFlip(index, firstLastCols)"
                 />
             </div>
         </div>
         <div v-if="isFaceCard" class="face-card">
-            <Jack v-if="value == 'J'" />
-            <Queen v-if="value == 'Q'" />
-            <King v-if="value == 'K'" />
+            <Jack v-if="value == 'J'" :altColour="suit == 'H' || suit == 'D'" />
+            <Queen v-if="value == 'Q'" :altColour="suit == 'H' || suit == 'D'" />
+            <King v-if="value == 'K'" :altColour="suit == 'H' || suit == 'D'" />
+            <SuitPicker class="face-suit-tr" :size="35" :suit="suit" />
+            <SuitPicker class="face-suit-bl" :size="35" :suit="suit" />
         </div>
     </div>
 </template>
 
 <script>
-import Club from "./suits/Club.vue";
-import Diamond from "./suits/Diamond.vue";
-import Heart from "./suits/Heart.vue";
-import Spade from "./suits/Spade.vue";
+import SuitPicker from "./suits/SuitPicker.vue";
 import Jack from "./suits/Jack.vue";
 import Queen from "./suits/Queen.vue";
 import King from "./suits/King.vue";
@@ -136,10 +51,7 @@ import King from "./suits/King.vue";
 export default {
     name: "SuitDisplay",
     components: {
-        Club,
-        Diamond,
-        Heart,
-        Spade,
+        SuitPicker,
         Jack,
         Queen,
         King
@@ -222,9 +134,23 @@ export default {
     }
 
     .face-card {
+        position: relative;
         display: flex;
         width: 100%;
         height: 100%;
+
+        .face-suit-tr {
+            position: absolute;
+            top: 40px;
+            right: 0px;
+        }
+
+        .face-suit-bl {
+            position: absolute;
+            rotate: 180deg;
+            bottom: 40px;
+            left: 0px
+        }
     }
 }
 </style>
