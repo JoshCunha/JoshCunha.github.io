@@ -193,10 +193,17 @@ export default {
             .subtitle {
                 text-align: center;
                 font-size: 30px;
+                margin: 0px;
             }
         }
 
         .footer-content {
+            flex-direction: column;
+
+            .resume-wrapper {
+                margin-bottom: 30px;
+            }
+
             .socials {
                 width: 100%;
                 justify-content: center;
